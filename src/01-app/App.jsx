@@ -1,14 +1,9 @@
-import {MainPage} from "03-page/main";
-
-import './App.module.scss'
+import {AppRouter} from "./router/AppRouter.jsx";
+import './App.module.scss';
 
 function App() {
 
-  return (
-    <>
-        <MainPage />
-    </>
-  );
+  return (<AppRouter/>);
 }
 
 export default App;

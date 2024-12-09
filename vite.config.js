@@ -11,6 +11,7 @@ export default defineConfig({
     alias: {
       "01-app":"/src/01-app",
       "03-page":"/src/03-page",
+      "05-features":"/src/05-features",
       "06-entities":"/src/06-entities",
       "07-shared":"/src/07-shared"
     }
