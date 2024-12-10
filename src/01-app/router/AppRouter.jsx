@@ -8,6 +8,7 @@ export const AppRouter = () => {
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/:id/day-deals" element={<DayDealsPage/>}/>
+                <Route path="*" element={<MainPage/>}/>
             </Routes>
     );
 };
