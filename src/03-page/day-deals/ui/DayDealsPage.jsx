@@ -7,6 +7,7 @@ import {observer} from "mobx-react";
 import {AddNewDeal} from "05-features/add-deal";
 import calendarTodosStore from "06-entities/main-calendar";
 import {EditDeal} from "05-features/edit-deal";
+import dayjs from "dayjs";
 
 import s from './DayDealsPage.module.scss';
 
@@ -14,6 +15,12 @@ export const DayDealsPage = observer(() => {
     const navigate = useNavigate();
 
     const {id} = useParams();
+
+    const isDayIdValid = dayjs(id).isValid();
+
+    if(!isDayIdValid) {
+        navigate('/');
+    }
 
     const deals = toJS(calendarTodosStore.daysTodos[id]);
 

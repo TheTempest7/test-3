@@ -2,7 +2,7 @@ import {makeAutoObservable} from "mobx";
 
 class CalendarTodosStore {
     daysTodos= {
-        '8122024':[
+        '08.12.2024':[
             { type: 'warning', content: 'This is warning even 1111111111t' , start: '8:00' , end: '10:00' },
             { type: 'success', content: 'This is very long usual event......', start: '9:00' , end: '11:00' },
             { type: 'error', content: 'This is error event 11111111.', start: '10:00' , end: '12:00' },
