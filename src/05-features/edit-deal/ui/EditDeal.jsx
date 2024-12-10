@@ -6,6 +6,8 @@ import { useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import calendarTodosStore from "06-entities/main-calendar/index.js";
 
+import s from './EditDeal.module.scss';
+
  export const EditDeal = ({deal, dayId, dealCurrentIndex, onClose}) => {
 
     const [currentDeal, setCurrentDeal] = useState(deal)
@@ -33,22 +35,25 @@ import calendarTodosStore from "06-entities/main-calendar/index.js";
     },[deal])
 
 
-    return <div>
-        EditDeal
+    return <div className={s.wrapper}>
         <Input
+            rootClassName={s.input}
             id={'EditDealContent'}
             value={currentDeal?.content}
             onChange = {onChangeDealContentHandler}
             placeholder="Basic usage"
             suffix={<PlusOutlined onClick={onSubmitDealChangeHandler} />}
+            maxLength={100}
         />
         <TimePicker
+            rootClassName={s.timePicker}
             id={'EditTimePickerStart'}
             onChange={(_, timeString)=>{onChangeTimeDealHandler( timeString,'EditTimePickerStart')}}
             format={'HH:mm'}
             value={dayjs(currentDeal?.start,'HH:mm')}
         />
         <TimePicker
+            rootClassName={s.timePicker}
             id={'EditTimePickerEnd'}
             onChange={(_, timeString)=>{onChangeTimeDealHandler( timeString,'EditTimePickerEnd')}}
             format={'HH:mm'}
